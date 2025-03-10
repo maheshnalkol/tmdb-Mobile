@@ -1,0 +1,44 @@
+<h1 class="alert alert-warning text-center">TMDB Movies Data</h1>
+<div class="container-fluid">
+    <div class="row">
+        <div *ngFor="let movie of movieData" class="col-md-4 mb-2 movieCard">
+            <div class="card h-100">
+                <div class="figure movieLayout m-0">
+                    <div class="imgConatin">
+                        <img class="img-fluid" [src]="baselink+movie.poster_path" [alt]="movie.title"
+                            [title]="movie.title">
+                    </div>
+                    <div class="figcaption w-100">
+                        <div class="titleInfo m-0">
+                            <div class="row">
+                                <div class="col-md-10">
+                                    <h3 class="m-0">{{movie.title}}</h3>
+                                </div>
+                                <div class="col-md-2">
+                                    <span
+                                    class="px-2"
+                                    [ngClass]="{
+                                        'bg-success':movie.vote_average >=8,
+                                        'bg-info':movie.vote_average >=6 && movie.vote_average < 8,
+                                        'bg-warning':movie.vote_average < 6 && movie.vote_average>=4,
+                                        'bg-danger':movie.vote_average < 4
+                                    }" 
+                                    >
+                                        {{movie.vote_average}}
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="overview">
+                            <p>
+                                <strong>{{movie.title}}:</strong>
+                                {{movie.overview}}
+                            </p>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
