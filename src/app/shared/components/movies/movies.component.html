@@ -1,7 +1,7 @@
 <h1 class="alert alert-warning text-center">TMDB Movies Data</h1>
 <div class="container-fluid">
     <div class="row">
-        <div *ngFor="let movie of movieData" class="col-md-4 mb-2 movieCard">
+        <div *ngFor="let movie of movieData" class="col-lg-4 col-md-4 col-sm-6 mb-2 movieCard">
             <div class="card h-100">
                 <div class="figure movieLayout m-0">
                     <div class="imgConatin h-100">
@@ -11,10 +11,10 @@
                     <div class="figcaption w-100">
                         <div class="titleInfo m-0">
                             <div class="row">
-                                <div class="col-md-10">
+                                <div class="col-lg-9 col-md-8 col-sm-8">
                                     <h3 class="m-0">{{movie.title}}</h3>
                                 </div>
-                                <div class="col-md-2">
+                                <div class="col-lg-3 col-md-4 col-sm-4">
                                     <span
                                     class="px-2"
                                     [ngClass]="{
